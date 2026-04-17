@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 0 0% 99%;
+    --fg: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-fg: 240 10% 3.9%;
+    --muted: 240 4.8% 95.9%;
+    --muted-fg: 240 3.8% 46.1%;
+    --border: 240 5.9% 90%;
+  }
+
+  .dark {
+    --bg: 240 10% 5%;
+    --fg: 0 0% 98%;
+    --card: 240 10% 7%;
+    --card-fg: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-fg: 240 5% 64.9%;
+    --border: 240 3.7% 18%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-[hsl(var(--bg))] text-[hsl(var(--fg))] font-outfit antialiased;
+    margin: 0;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-fg));
+  border-radius: 4px;
+}
+
+/* Utility classes */
+.card-bg {
+  background: hsl(var(--card));
+  color: hsl(var(--card-fg));
+}
+
+.text-muted {
+  color: hsl(var(--muted-fg));
+}
+
+.border-themed {
+  border-color: hsl(var(--border));
+}
+
+.bg-muted-themed {
+  background: hsl(var(--muted));
+}
+
+/* Grid background pattern */
+.grid-bg {
+  background-image: linear-gradient(to right, #80808012 1px, transparent 1px),
+    linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Counter animation */
+@keyframes counter-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

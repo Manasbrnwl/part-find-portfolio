@@ -4,10 +4,10 @@ export const defaultContent = {
     links: [
       { label: "Services", href: "#services" },
       { label: "Our Work", href: "#work" },
-      { label: "About", href: "#stats" },
+      { label: "Blogs", href: "#blogs" },
       { label: "Contact", href: "#contact" },
     ],
-    cta: { label: "GET A QUOTE", href: "#contact" },
+    cta: { label: "GET THE APP", href: "https://play.google.com/store/apps/details?id=com.event.part-find" },
   },
   hero: {
     badge: "Event Staffing Experts",
@@ -143,8 +143,33 @@ export const defaultContent = {
     headline: "Ready to Staff Your Next Event?",
     subheadline:
       "Tell us your dates, headcount, and roles needed. We'll handle recruitment, briefing and deployment — so you can focus on the event itself.",
-    primaryCTA: { label: "Get a Quote", href: "mailto:official@part-find.org" },
-    secondaryCTA: { label: "Call Us", href: "tel:+919999999999" },
+    primaryCTA: { label: "Download App", href: "https://play.google.com/store/apps/details?id=com.event.part-find" },
+    secondaryCTA: { label: "Get a Quote", href: "#contact" },
+  },
+  blogs: {
+    headline: "Event Insights",
+    subtitle: "Professional tips and company updates from the Part-find team.",
+    items: [
+      {
+        title: "How to Ace Your First Event Gig",
+        excerpt: "Tips on professionalism, networking, and making a great first impression.",
+        date: "Oct 24, 2025",
+        image: "https://images.unsplash.com/photo-1540575861501-7c00117feda?q=80&w=2070&auto=format&fit=crop"
+      },
+      {
+        title: "Staffing Solutions for Large Events",
+        excerpt: "Leveraging technology to manage hundreds of staff with zero friction.",
+        date: "Nov 02, 2025",
+        image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop"
+      }
+    ]
+  },
+  enquiry: {
+    headline: "Business Enquiries",
+    subtitle: "Let's discuss your event staffing requirements.",
+    email: "official@part-find.org",
+    phone: "+91 9110056157",
+    address: "Mumbai, India"
   },
   footer: {
     brand: "Part-find",

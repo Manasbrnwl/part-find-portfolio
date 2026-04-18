@@ -88,14 +88,14 @@ export function HeroSection({ content = defaultContent.hero }: HeroSectionProps)
           >
             <a
               href={content.primaryCTA.href}
-              className="inline-flex h-12 px-8 bg-brand text-white font-bold tracking-wide uppercase items-center border-2 border-transparent hover:bg-brand-dark active:translate-y-0.5 transition-all duration-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] active:shadow-none"
+              className="inline-flex h-14 px-10 bg-brand text-white font-black text-sm uppercase tracking-widest items-center border-2 border-transparent hover:bg-brand-dark active:translate-y-0.5 transition-all duration-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.1)] active:shadow-none italic"
             >
-              <Ticket className="mr-2 h-4 w-4" />
+              <ArrowRight className="mr-2 h-4 w-4" />
               {content.primaryCTA.label}
             </a>
             <a
               href={content.secondaryCTA.href}
-              className="inline-flex h-12 px-8 border-2 border-current font-bold tracking-wide uppercase items-center hover:bg-[hsl(var(--fg))] hover:text-[hsl(var(--bg))] active:translate-y-0.5 transition-all duration-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none ml-1"
+              className="inline-flex h-14 px-10 border-2 border-themed font-bold text-sm uppercase tracking-widest items-center hover:bg-[hsl(var(--fg))] hover:text-[hsl(var(--bg))] active:translate-y-0.5 transition-all duration-100 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none ml-1"
             >
               <Mic className="mr-2 h-4 w-4" />
               {content.secondaryCTA.label}

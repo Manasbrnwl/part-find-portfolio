@@ -3,8 +3,10 @@ import { HeroSection } from "@/components/HeroSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { StatsSection } from "@/components/StatsSection";
 import { WorkGallery } from "@/components/WorkGallery";
+import { BlogSection } from "@/components/BlogSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { CTASection } from "@/components/CTASection";
+import { EnquiryForm } from "@/components/EnquiryForm";
 import { Footer } from "@/components/Footer";
 import { defaultContent } from "@/lib/content";
 
@@ -20,7 +22,9 @@ export function LandingPage({ content = defaultContent }: LandingPageProps) {
       <ServicesSection content={content.services} />
       <StatsSection content={content.stats} />
       <WorkGallery content={content.workGallery} />
+      <BlogSection content={content.blogs} />
       <TestimonialsSection content={content.testimonials} />
+      <EnquiryForm content={content.enquiry} />
       <CTASection content={content.cta} />
       <Footer content={content.footer} />
     </div>

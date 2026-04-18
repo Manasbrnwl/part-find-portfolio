@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, Send, CheckCircle } from "lucide-react";
 import { defaultContent } from "@/lib/content";
 
 interface EnquiryFormProps {

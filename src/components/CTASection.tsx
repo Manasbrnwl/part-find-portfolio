@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Zap } from "lucide-react";
+import { Phone, Zap } from "lucide-react";
 import { defaultContent } from "@/lib/content";
 
 interface CTASectionProps {

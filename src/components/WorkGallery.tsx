@@ -3,25 +3,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { defaultContent } from "@/lib/content";
 
 interface WorkGalleryProps {
-  content?: typeof defaultContent.workGallery;
+  content?: typeof defaultContent.workGallery & {
+    items: {
+      id: number;
+      category: string;
+      image: string;
+      title: string;
+    }[];
+  };
 }
 
-const GALLERY_ITEMS = [
-  { id: 1, category: "Hall Management", color: "bg-blue-600", icon: "🏛️" },
-  { id: 2, category: "Hostess", color: "bg-purple-600", icon: "👗" },
-  { id: 3, category: "Shadow", color: "bg-zinc-600", icon: "🕶️" },
-  { id: 4, category: "Registration Desk", color: "bg-emerald-600", icon: "📝" },
-  { id: 5, category: "Volunteers", color: "bg-rose-600", icon: "🌹" },
-  { id: 6, category: "Hall Management", color: "bg-blue-800", icon: "🏛️" },
-];
-
-export function WorkGallery({ content = defaultContent.workGallery }: WorkGalleryProps) {
+export function WorkGallery({ content = defaultContent.workGallery as any }: WorkGalleryProps) {
   const [activeCategory, setActiveCategory] = useState("All");
 
+  const items = content.items || [];
   const filteredItems =
     activeCategory === "All"
-      ? GALLERY_ITEMS
-      : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
+      ? items
+      : items.filter((item) => item.category === activeCategory);
 
   return (
     <section id="work" className="py-24 md:py-32 bg-[hsl(var(--bg))] relative">
@@ -73,18 +72,20 @@ export function WorkGallery({ content = defaultContent.workGallery }: WorkGaller
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className={`aspect-[4/3] relative group overflow-hidden border-2 border-themed ${item.color}`}
+                className="aspect-[4/3] relative group overflow-hidden border-2 border-themed bg-muted"
               >
-                <div className="absolute inset-0 flex items-center justify-center text-6xl opacity-20 group-hover:scale-110 transition-transform duration-500">
-                  {item.icon}
-                </div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
 
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                   <span className="font-mono text-xs text-accent uppercase tracking-widest mb-1">
                     {item.category}
                   </span>
                   <p className="font-syne text-white text-lg font-bold">
-                    Event Logistics & Placement
+                    {item.title}
                   </p>
                 </div>
               </motion.div>

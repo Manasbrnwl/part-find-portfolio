@@ -17,10 +17,18 @@ export function Footer({ content = defaultContent.footer }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-6 h-6 bg-brand flex items-center justify-center border border-black rotate-3">
-                <Ticket className="h-3 w-3 text-white -rotate-3" />
-              </div>
+            <div className="flex items-center gap-3 mb-4">
+              {content.logo ? (
+                <img 
+                  src={content.logo} 
+                  alt={content.brand} 
+                  className="w-10 h-10 object-contain rounded-full border-2 border-themed"
+                />
+              ) : (
+                <div className="w-6 h-6 bg-brand flex items-center justify-center border border-black rotate-3">
+                  <Ticket className="h-3 w-3 text-white -rotate-3" />
+                </div>
+              )}
               <div className="font-syne font-extrabold text-2xl tracking-tighter uppercase whitespace-nowrap">
                 {content.brand}
               </div>

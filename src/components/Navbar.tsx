@@ -19,11 +19,19 @@ export function Navbar({ content = defaultContent.navbar }: NavbarProps) {
       <div className="container mx-auto px-4 md:px-6 max-w-7xl flex items-center justify-between h-16">
         <a 
           href="/" 
-          className="flex items-center gap-2 group transition-transform duration-200 active:scale-95"
+          className="flex items-center gap-3 group transition-transform duration-200 active:scale-95"
         >
-          <div className="w-8 h-8 bg-brand flex items-center justify-center border-2 border-black rotate-3 group-hover:rotate-6 transition-transform duration-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <Ticket className="h-4 w-4 text-white -rotate-3 group-hover:-rotate-6 transition-transform duration-200" />
-          </div>
+          {content.logo ? (
+            <img 
+              src={content.logo} 
+              alt={content.brand} 
+              className="w-10 h-10 object-contain rounded-full border-2 border-themed group-hover:scale-105 transition-transform duration-200"
+            />
+          ) : (
+            <div className="w-8 h-8 bg-brand flex items-center justify-center border-2 border-black rotate-3 group-hover:rotate-6 transition-transform duration-200 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <Ticket className="h-4 w-4 text-white -rotate-3 group-hover:-rotate-6 transition-transform duration-200" />
+            </div>
+          )}
           <span className="font-syne font-extrabold text-2xl tracking-tighter uppercase whitespace-nowrap">
             {content.brand}
           </span>

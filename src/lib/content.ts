@@ -1,13 +1,14 @@
 export const defaultContent = {
   navbar: {
     brand: "Part-find",
+    logo: "/assets/logo.webp",
     links: [
       { label: "Services", href: "#services" },
       { label: "Our Work", href: "#work" },
       { label: "Blogs", href: "#blogs" },
       { label: "Contact", href: "#contact" },
     ],
-    cta: { label: "GET THE APP", href: "https://play.google.com/store/apps/details?id=com.event.part-find" },
+    cta: { label: "GET THE APP", target: "_blank", href: "https://play.google.com/store/apps/details?id=com.event.partfind" },
   },
   hero: {
     badge: "Event Staffing Experts",
@@ -103,6 +104,18 @@ export const defaultContent = {
       "Registration Desk",
       "Volunteers",
     ],
+    items: [
+      { id: 1, category: "Hall Management", image: "/assets/hall_manager_1.jpeg", title: "Corporate Business Summit" },
+      { id: 2, category: "Hostess", image: "/assets/hostess.jpeg", title: "AI Expo" },
+      { id: 3, category: "Shadow", image: "/assets/shadow.jpeg", title: "VIP Support" },
+      { id: 4, category: "Registration Desk", image: "/assets/registration_desk.jpeg", title: "Corporate Check-in" },
+      { id: 5, category: "Hostess", image: "/assets/hostess_2.jpeg", title: "Premium Product Launch" },
+      { id: 6, category: "Volunteers", image: "/assets/volunteers.jpeg", title: "Music & Arts Festival" },
+      { id: 7, category: "Registration Desk", image: "/assets/registration_desk_2.jpeg", title: "Tech Summit Check-in" },
+      { id: 8, category: "Volunteers", image: "/assets/volunteers_2.jpeg", title: "Expo Volunteers" },
+      { id: 9, category: "Hall Management", image: "/assets/hall_manager_3.jpeg", title: "Exhibition Floor Management" },
+      { id: 10, category: "Volunteers", image: "/assets/volunteers_3.jpeg", title: "Music Festival Logistics" },
+    ],
   },
   testimonials: {
     badge: "Testimonials",
@@ -110,30 +123,30 @@ export const defaultContent = {
     items: [
       {
         quote:
-          "Part-Find has been a game-changer for our corporate events. Their hostess team is exceptionally professional and well-trained.",
-        author: "Sarah J.",
-        role: "Event Director, TechCorp",
+          "Great experience working with PartFind! The hostesses they provided were professional, approachable, and helped us engage better with visitors at our stall. Would definitely collaborate again.",
+        author: "Island Computing Services",
+        // role: "Event Director, TechCorp",
         rating: 5,
       },
       {
         quote:
-          "The most reliable staffing partner we've found in Mumbai. The volunteers they provided for our festival were proactive and energetic.",
-        author: "Karan M.",
-        role: "Founder, LiveEvents India",
+          "Part-find supported us with shadow and registration desk staff, and the execution was seamless. The team was well-coordinated, punctual, and managed attendee flow efficiently. A reliable partner for event manpower.",
+        author: "Goonj Entertainment",
+        // role: "Founder, LiveEvents India",
         rating: 5,
       },
       {
         quote:
-          "Their shadow staff service is top-notch. Discreet, professional, and always on top of their game. Perfect for our VIP guests.",
-        author: "Anita R.",
-        role: "PR Lead, FashionWeek",
+          "We regularly collaborate with PartFind for trip captains, and the experience has been consistently excellent. Their team is responsible, well-trained, and ensures smooth coordination throughout the journey.",
+        author: "DreamEscape Journey",
+        // role: "PR Lead, FashionWeek",
         rating: 4,
       },
       {
         quote:
-          "Quick turnaround and great talent. Needed 20 promoters at short notice and Part-Find delivered within 24 hours.",
-        author: "Vikram S.",
-        role: "Marketing Manager, BeverageBrand",
+          "We had a smooth experience working with PartFind. The hostess they provided was presentable, proactive, and helped us engage effectively with visitors at our stall. Highly reliable service.",
+        author: "Binita Trading Company",
+        // role: "Marketing Manager, BeverageBrand",
         rating: 5,
       },
     ],
@@ -143,7 +156,7 @@ export const defaultContent = {
     headline: "Ready to Staff Your Next Event?",
     subheadline:
       "Tell us your dates, headcount, and roles needed. We'll handle recruitment, briefing and deployment — so you can focus on the event itself.",
-    primaryCTA: { label: "Download App", href: "https://play.google.com/store/apps/details?id=com.event.part-find" },
+    primaryCTA: { label: "Download App", target: "_blank", href: "https://play.google.com/store/apps/details?id=com.event.partfind" },
     secondaryCTA: { label: "Get a Quote", href: "#contact" },
   },
   blogs: {
@@ -151,16 +164,18 @@ export const defaultContent = {
     subtitle: "Professional tips and company updates from the Part-find team.",
     items: [
       {
-        title: "How to Ace Your First Event Gig",
-        excerpt: "Tips on professionalism, networking, and making a great first impression.",
-        date: "Oct 24, 2025",
-        image: "https://images.unsplash.com/photo-1540575861501-7c00117feda?q=80&w=2070&auto=format&fit=crop"
+        title: "Volunteer Impact Ripples: Showing How Volunteerism Matters",
+        excerpt: "Discover how volunteers create ripples of positive change at events, boosting engagement and community spirit.",
+        date: "Apr 1, 2026",
+        image: "https://i0.wp.com/www.volunteercommons.com/wp-content/uploads/2026/03/Ripple-by-qimono-from-Pixabay.jpg?resize=1024%2C546&ssl=1",
+        href: "https://www.volunteercommons.com/2026/04/01/volunteer-impact-ripples/"
       },
       {
-        title: "Staffing Solutions for Large Events",
-        excerpt: "Leveraging technology to manage hundreds of staff with zero friction.",
-        date: "Nov 02, 2025",
-        image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2070&auto=format&fit=crop"
+        title: "Future of Work and Business",
+        excerpt: "The gig economy is reshaping how we work and do business. Learn how flexible staffing models are driving growth and innovation across industries.",
+        date: "July 31, 2024",
+        image: "https://www.park.edu/wp-content/uploads/2024/07/Park-University-Gig-Economy-Blog-Banner-1024x576.jpg",
+        href: "https://www.park.edu/blog/the-gig-economy-shaping-the-future-of-work-and-business/"
       }
     ]
   },
@@ -168,11 +183,13 @@ export const defaultContent = {
     headline: "Business Enquiries",
     subtitle: "Let's discuss your event staffing requirements.",
     email: "official@part-find.org",
-    phone: "+91 9110056157",
-    address: "Mumbai, India"
+    phone: "+91 8538972281, +91 8826302320",
+    cta: { label: "GET THE APP", href: "https://play.google.com/store/apps/details?id=com.event.partfind" },
   },
   footer: {
     brand: "Part-find",
+    logo: "/assets/logo.webp",
+    logoClassName: "rounded-full",
     description: "Premium event staffing solutions. The right people, every event.",
     email: "official@part-find.org",
     socials: {

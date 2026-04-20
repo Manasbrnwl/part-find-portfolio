@@ -70,11 +70,28 @@ export function ServicesSection({ content = defaultContent.services }: ServicesS
               >
                 {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300" />
+{/* 
+                <div className="relative mb-6 aspect-video overflow-hidden border-b-2 border-themed -mx-6 -mt-6 md:-mx-8 md:-mt-8">
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={service.role}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <Icon className="h-12 w-12 text-brand/20" />
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                </div> */}
 
-                <Icon className="h-8 w-8 mb-4 text-brand" />
-                <h3 className="font-syne text-xl font-bold uppercase mb-1">
-                  {service.role}
-                </h3>
+                <div className="flex items-center gap-3 mb-4">
+                  <Icon className="h-6 w-6 text-brand" />
+                  <h3 className="font-syne text-xl font-bold uppercase">
+                    {service.role}
+                  </h3>
+                </div>
                 <div className="font-mono text-sm text-accent font-bold mb-4">
                   {service.priceRange}
                   <span className="text-muted font-normal text-xs ml-1">

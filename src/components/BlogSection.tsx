@@ -33,14 +33,17 @@ export function BlogSection({ content = defaultContent.blogs }: BlogSectionProps
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {items.map((blog, i) => (
-            <motion.div
+          {items.map((blog: any, i) => (
+            <motion.a
               key={i}
+              href={blog.href}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group cursor-pointer"
+              className="group block"
             >
               <div className="aspect-[21/9] overflow-hidden mb-8 border-2 border-themed group-hover:border-brand transition-colors duration-300 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.05)]">
                 <img
@@ -62,7 +65,7 @@ export function BlogSection({ content = defaultContent.blogs }: BlogSectionProps
               <div className="flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-widest group-hover:text-brand transition-colors">
                 Read Article <ArrowRight className="h-4 w-4 bg-brand text-white p-0.5 rounded-full" />
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

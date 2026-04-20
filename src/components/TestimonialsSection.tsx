@@ -45,7 +45,7 @@ export function TestimonialsSection({ content = defaultContent.testimonials }: T
                 <div>
                   <div className="font-syne font-bold text-sm tracking-tight">{t.author}</div>
                   <div className="font-mono text-xs text-muted uppercase tracking-wider">
-                    {t.role}
+                    {/* {t.role} */}
                   </div>
                 </div>
                 <div className="flex gap-0.5">

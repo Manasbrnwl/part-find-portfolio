@@ -146,21 +146,33 @@ function FloatingCard({ card, index, mouseX, mouseY }: FloatingCardProps) {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.3 + index * 0.15 }}
-      className="absolute card-bg border-2 border-themed p-6 w-64 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)]"
+      className="absolute card-bg border-2 border-themed p-6 w-64 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] overflow-hidden group"
     >
-      <div className="flex items-center gap-2 mb-2">
-        <Icon className="h-4 w-4 text-accent" />
-        <span className="font-mono text-xs text-muted uppercase tracking-wider">
-          STAFF #{String(index + 1).padStart(3, "0")}
-        </span>
-      </div>
-      <div className="font-syne font-bold text-lg">{card.title}</div>
-      <div className="flex justify-between items-center mt-3">
-        <span className="font-mono text-sm text-accent font-bold">
-          <ArrowRight className="inline h-3 w-3 mr-1" />
-          View
-        </span>
-        <span className="font-outfit text-xs text-muted">{card.detail}</span>
+      {card.image && (
+        <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+          <img
+            src={card.image}
+            alt={card.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg))] to-transparent" />
+        </div>
+      )}
+      <div className="relative z-10">
+        <div className="flex items-center gap-2 mb-2">
+          <Icon className="h-4 w-4 text-accent" />
+          <span className="font-mono text-xs text-muted uppercase tracking-wider">
+            STAFF #{String(index + 1).padStart(3, "0")}
+          </span>
+        </div>
+        <div className="font-syne font-bold text-lg">{card.title}</div>
+        <div className="flex justify-between items-center mt-3">
+          <span className="font-mono text-sm text-accent font-bold">
+            <ArrowRight className="inline h-3 w-3 mr-1" />
+            View
+          </span>
+          <span className="font-outfit text-xs text-muted">{card.detail}</span>
+        </div>
       </div>
     </motion.div>
   );
